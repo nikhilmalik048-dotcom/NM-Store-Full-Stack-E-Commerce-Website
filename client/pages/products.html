@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Products - NM Store</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <div id="navbar-root"></div>
+
+  <div class="container section" style="display:grid; grid-template-columns:240px 1fr; gap:24px; align-items:flex-start;">
+    <!-- Filters Sidebar -->
+    <aside class="card">
+      <h3 class="mb-2">Filters</h3>
+
+      <div class="form-group">
+        <label>Category</label>
+        <select id="filter-category">
+          <option value="">All Categories</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Brand</label>
+        <select id="filter-brand">
+          <option value="">All Brands</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Price Range</label>
+        <div class="flex" style="gap:8px;">
+          <input type="number" id="filter-min-price" placeholder="Min" />
+          <input type="number" id="filter-max-price" placeholder="Max" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Minimum Rating</label>
+        <select id="filter-rating">
+          <option value="">Any Rating</option>
+          <option value="4">4★ & above</option>
+          <option value="3">3★ & above</option>
+          <option value="2">2★ & above</option>
+          <option value="1">1★ & above</option>
+        </select>
+      </div>
+
+      <button class="btn btn-primary btn-block" id="apply-filters">Apply Filters</button>
+      <button class="btn btn-outline btn-block mt-1" id="clear-filters">Clear Filters</button>
+    </aside>
+
+    <!-- Product Results -->
+    <div>
+      <div class="flex-between mb-2" style="flex-wrap:wrap; gap:10px;">
+        <h2 id="results-title">All Products</h2>
+        <select id="sort-select">
+          <option value="newest">Newest First</option>
+          <option value="price_asc">Price: Low to High</option>
+          <option value="price_desc">Price: High to Low</option>
+          <option value="rating">Top Rated</option>
+          <option value="popular">Most Popular</option>
+        </select>
+      </div>
+
+      <div id="products-container" class="product-grid">
+        <div class="spinner"></div>
+      </div>
+
+      <div id="pagination" class="flex text-center mt-3" style="justify-content:center; gap:8px;"></div>
+    </div>
+  </div>
+
+  <div id="footer-root"></div>
+
+  <script src="/js/main.js"></script>
+  <script src="/js/product-card.js"></script>
+  <script src="/js/products.js"></script>
+</body>
+</html>

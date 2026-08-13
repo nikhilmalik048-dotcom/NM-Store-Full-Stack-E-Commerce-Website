@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NM Store - Shop Everything You Need</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <div id="navbar-root"></div>
+
+  <section class="hero">
+    <h1>Everything You Need, All in One Place</h1>
+    <p>Shop the latest electronics, fashion, home essentials and more — at prices you'll love.</p>
+    <a href="/products" class="btn btn-secondary">Shop Now</a>
+  </section>
+
+  <section class="section container">
+    <div class="section-title">
+      <h2>Featured Products</h2>
+      <a href="/products?featured=true">View all →</a>
+    </div>
+    <div id="featured-products" class="product-grid">
+      <div class="spinner"></div>
+    </div>
+  </section>
+
+  <section class="section container" style="background:white; border-radius:var(--radius);">
+    <div class="section-title">
+      <h2>Latest Products</h2>
+      <a href="/products?sort=newest">View all →</a>
+    </div>
+    <div id="latest-products" class="product-grid">
+      <div class="spinner"></div>
+    </div>
+  </section>
+
+  <section class="section container">
+    <div class="section-title">
+      <h2>Popular Products</h2>
+      <a href="/products?sort=popular">View all →</a>
+    </div>
+    <div id="popular-products" class="product-grid">
+      <div class="spinner"></div>
+    </div>
+  </section>
+
+  <section class="section container">
+    <div class="section-title"><h2>Shop by Category</h2></div>
+    <div id="home-categories" class="product-grid">
+      <div class="spinner"></div>
+    </div>
+  </section>
+
+  <div id="footer-root"></div>
+
+  <script src="/js/main.js"></script>
+  <script src="/js/product-card.js"></script>
+  <script src="/js/home.js"></script>
+</body>
+</html>

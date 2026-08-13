@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Wishlist - NM Store</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <div id="navbar-root"></div>
+
+  <div class="container section">
+    <h2 class="mb-3">My Wishlist</h2>
+    <div id="wishlist-root"><div class="spinner"></div></div>
+  </div>
+
+  <div id="footer-root"></div>
+
+  <script src="/js/main.js"></script>
+  <script>
+    async function loadWishlist() {
+      const root = document.getElementById('wishlist-root');
+      if (!requireLogin()) return;
+
+      try {
+        const { wishlist } = await apiRequest('/wishlist');
+        if (wishlist.products.length === 0) {
+          root.innerHTML = `
+            <div class="empty-state">
+              <div class="icon">♡</div>
+              <p>Your wishlist is empty.</p>
+              <a href="/products" class="btn btn-primary mt-2">Browse Products</a>
+            </div>`;
+          return;
+        }
+
+        root.innerHTML = `<div class="product-grid" id="wishlist-grid"></div>`;
+        const grid = document.getElementById('wishlist-grid');
+
+        grid.innerHTML = wishlist.products.map((p) => {
+          const image = p.images && p.images[0] ? p.images[0] : 'https://placehold.co/300x300?text=No+Image';
+          const finalPrice = p.discountPrice > 0 ? p.discountPrice : p.price;
+          return `
+            <div class="product-card">
+              <a href="/product-detail?id=${p._id}">
+                <div class="img-wrap"><img src="${image}" alt="${p.name}" /></div>
+              </a>
+              <div class="info">
+                <a href="/product-detail?id=${p._id}"><h3>${p.name}</h3></a>
+                <div class="price mb-2">${formatPrice(finalPrice)}</div>
+                <button class="btn btn-primary btn-sm mb-1" data-action="move" data-id="${p._id}">Move to Cart</button>
+                <button class="btn btn-outline btn-sm" data-action="remove" data-id="${p._id}">Remove</button>
+              </div>
+            </div>
+          `;
+        }).join('');
+
+        grid.addEventListener('click', async (e) => {
+          const moveBtn = e.target.closest('[data-action="move"]');
+          const removeBtn = e.target.closest('[data-action="remove"]');
+
+          if (moveBtn) {
+            try {
+              await apiRequest(`/wishlist/${moveBtn.dataset.id}/move-to-cart`, { method: 'POST' });
+              showToast('Moved to cart', 'success');
+              loadWishlist();
+              updateNavBadges();
+            } catch (err) { showToast(err.message, 'error'); }
+          }
+
+          if (removeBtn) {
+            try {
+              await apiRequest(`/wishlist/${removeBtn.dataset.id}`, { method: 'DELETE' });
+              showToast('Removed from wishlist', 'success');
+              loadWishlist();
+              updateNavBadges();
+            } catch (err) { showToast(err.message, 'error'); }
+          }
+        });
+      } catch (err) {
+        root.innerHTML = `<div class="empty-state">Error: ${err.message}</div>`;
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', loadWishlist);
+  </script>
+</body>
+</html>

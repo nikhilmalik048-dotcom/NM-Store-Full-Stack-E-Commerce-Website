@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register - NM Store</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <div id="navbar-root"></div>
+
+  <div class="auth-wrapper">
+    <div class="card">
+      <h2>Create your account</h2>
+      <p class="sub">Join NM Store to start shopping</p>
+
+      <form id="register-form">
+        <div class="form-group">
+          <label for="name">Full name</label>
+          <input type="text" id="name" required placeholder="John Doe" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" id="email" required placeholder="you@example.com" />
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone number (optional)</label>
+          <input type="tel" id="phone" placeholder="10-digit phone number" />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" required placeholder="At least 6 characters" minlength="6" />
+        </div>
+        <div class="form-group">
+          <label for="confirmPassword">Confirm password</label>
+          <input type="password" id="confirmPassword" required placeholder="Re-enter password" />
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" id="register-btn">Create Account</button>
+      </form>
+
+      <div class="auth-switch">Already have an account? <a href="/login">Login here</a></div>
+    </div>
+  </div>
+
+  <div id="footer-root"></div>
+
+  <script src="/js/main.js"></script>
+  <script>
+    document.getElementById('register-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = document.getElementById('register-btn');
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirmPassword').value;
+
+      if (password !== confirmPassword) {
+        showToast('Passwords do not match', 'error');
+        return;
+      }
+      if (phone && !/^[0-9]{10}$/.test(phone)) {
+        showToast('Phone number must be exactly 10 digits', 'error');
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = 'Creating account...';
+
+      try {
+        const data = await apiRequest('/auth/register', {
+          method: 'POST',
+          body: { name, email, password, phone: phone || undefined },
+        });
+        Auth.setSession(data.token, data.user);
+        showToast('Account created successfully', 'success');
+        setTimeout(() => (window.location.href = '/'), 500);
+      } catch (err) {
+        showToast(err.message, 'error');
+        btn.disabled = false;
+        btn.textContent = 'Create Account';
+      }
+    });
+  </script>
+</body>
+</html>

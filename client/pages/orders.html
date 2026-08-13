@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Orders - NM Store</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <div id="navbar-root"></div>
+
+  <div class="container section">
+    <h2 class="mb-3">My Orders</h2>
+    <div id="orders-root"><div class="spinner"></div></div>
+  </div>
+
+  <!-- Order detail modal-like panel -->
+  <div class="container section" id="order-detail-section" style="display:none;">
+    <button class="btn btn-outline btn-sm mb-2" id="back-to-orders">← Back to Orders</button>
+    <div id="order-detail-root"></div>
+  </div>
+
+  <div id="footer-root"></div>
+
+  <script src="/js/main.js"></script>
+  <script src="/js/orders.js"></script>
+</body>
+</html>
