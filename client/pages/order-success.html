@@ -2,26 +2,188 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Order Placed - NM Store</title>
-  <link rel="stylesheet" href="/css/style.css" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <meta
+    name="description"
+    content="Your NM Store order has been placed successfully."
+  />
+
+  <title>Order Confirmed - NM Store</title>
+
+  <link
+    rel="stylesheet"
+    href="/css/style.css"
+  />
 </head>
+
 <body>
+
+  <!-- ==============================
+       NAVBAR
+  =============================== -->
+
   <div id="navbar-root"></div>
 
-  <div class="container section text-center">
-    <div class="card" style="max-width:500px; margin:0 auto;">
-      <div style="font-size:60px;">✅</div>
-      <h2 class="mt-2">Order Placed Successfully!</h2>
-      <p style="color:var(--text-light);" class="mt-1">Thank you for shopping with us. Your order is being processed.</p>
-      <div class="flex mt-3" style="justify-content:center; gap:10px;">
-        <a href="/orders" class="btn btn-primary">View My Orders</a>
-        <a href="/products" class="btn btn-outline">Continue Shopping</a>
+
+  <!-- ==============================
+       SUCCESS PAGE
+  =============================== -->
+
+  <main class="order-success-page">
+
+    <div class="container section">
+
+      <div class="order-success-card">
+
+        <!-- Success Icon -->
+
+        <div class="success-animation">
+
+          <div class="success-circle">
+            ✓
+          </div>
+
+        </div>
+
+
+        <!-- Heading -->
+
+        <span class="success-badge">
+          ORDER CONFIRMED
+        </span>
+
+        <h1>
+          Order Placed Successfully!
+        </h1>
+
+        <p class="success-message">
+          Thank you for shopping with NM Store.
+          Your order has been received and is now
+          being processed.
+        </p>
+
+
+        <!-- Delivery Info -->
+
+        <div class="success-info">
+
+          <div class="success-info-item">
+
+            <span class="success-info-icon">
+              📦
+            </span>
+
+            <div>
+
+              <strong>
+                Order Confirmed
+              </strong>
+
+              <small>
+                We're preparing your order
+              </small>
+
+            </div>
+
+          </div>
+
+
+          <div class="success-info-item">
+
+            <span class="success-info-icon">
+              🚚
+            </span>
+
+            <div>
+
+              <strong>
+                Fast Delivery
+              </strong>
+
+              <small>
+                We'll keep you updated
+              </small>
+
+            </div>
+
+          </div>
+
+
+          <div class="success-info-item">
+
+            <span class="success-info-icon">
+              🔒
+            </span>
+
+            <div>
+
+              <strong>
+                Secure Order
+              </strong>
+
+              <small>
+                Your order is safely recorded
+              </small>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- Buttons -->
+
+        <div class="success-actions">
+
+          <a
+            href="/orders"
+            class="btn btn-primary"
+          >
+            View My Orders →
+          </a>
+
+          <a
+            href="/products"
+            class="btn btn-outline"
+          >
+            Continue Shopping
+          </a>
+
+        </div>
+
+
+        <!-- Help -->
+
+        <p class="success-help">
+
+          Need help with your order?
+
+          <a href="/orders">
+            Visit My Orders
+          </a>
+
+        </p>
+
       </div>
+
     </div>
-  </div>
+
+  </main>
+
+
+  <!-- ==============================
+       FOOTER
+  =============================== -->
 
   <div id="footer-root"></div>
+
+
   <script src="/js/main.js"></script>
+
 </body>
 </html>

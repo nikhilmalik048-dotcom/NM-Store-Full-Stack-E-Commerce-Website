@@ -65,10 +65,28 @@
       </div>
 
       <div id="products-container" class="product-grid">
-        <div class="spinner"></div>
-      </div>
+  <div class="spinner"></div>
+</div>
 
-      <div id="pagination" class="flex text-center mt-3" style="justify-content:center; gap:8px;"></div>
+<!-- Infinite Scroll Trigger -->
+<div id="scroll-sentinel" style="height: 1px;"></div>
+
+<!-- Loading / Status Message -->
+<div
+  id="scroll-status"
+  style="
+    text-align:center;
+    padding:20px;
+    font-size:14px;
+  ">
+</div>
+
+<!-- Keep this if you want pagination as fallback -->
+<div
+  id="pagination"
+  class="flex text-center mt-3"
+  style="justify-content:center; gap:8px;">
+</div>
     </div>
   </div>
 

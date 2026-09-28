@@ -3,20 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Cart - NM Store</title>
+  <meta name="description" content="Shopping cart - NM Store" />
+  <meta name="theme-color" content="#0f172a" />
+  <title>Shopping Cart | NM Store</title>
+
   <link rel="stylesheet" href="/css/style.css" />
 </head>
+
 <body>
+
   <div id="navbar-root"></div>
 
-  <div class="container section">
-    <h2 class="mb-3">Shopping Cart</h2>
-    <div id="cart-root"><div class="spinner"></div></div>
-  </div>
+  <main class="container section cart-page">
+
+    <!-- cart.js will create the complete cart UI -->
+    <div id="cart-root">
+      <div class="cart-loading">
+        <div class="spinner"></div>
+        <p>Loading your cart...</p>
+      </div>
+    </div>
+
+  </main>
 
   <div id="footer-root"></div>
 
   <script src="/js/main.js"></script>
   <script src="/js/cart.js"></script>
+
 </body>
 </html>

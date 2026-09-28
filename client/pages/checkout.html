@@ -2,21 +2,110 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <meta
+    name="description"
+    content="Secure checkout - NM Store"
+  />
+
   <title>Checkout - NM Store</title>
-  <link rel="stylesheet" href="/css/style.css" />
+
+  <link
+    rel="stylesheet"
+    href="/css/style.css"
+  />
 </head>
+
 <body>
+
+  <!-- ==============================
+       NAVBAR
+  =============================== -->
+
   <div id="navbar-root"></div>
 
-  <div class="container section">
-    <h2 class="mb-3">Checkout</h2>
-    <div id="checkout-root"><div class="spinner"></div></div>
-  </div>
+
+  <!-- ==============================
+       CHECKOUT
+  =============================== -->
+
+  <main class="checkout-page">
+
+    <div class="container section">
+
+
+      <!-- Page Header -->
+
+      <div class="checkout-page-header">
+
+        <div>
+
+          <span class="checkout-page-badge">
+            🔒 SECURE CHECKOUT
+          </span>
+
+          <h1>
+            Complete Your Order
+          </h1>
+
+          <p>
+            Review your details and place your order securely.
+          </p>
+
+        </div>
+
+
+        <a
+          href="/cart"
+          class="back-to-cart"
+        >
+          ← Back to Cart
+        </a>
+
+      </div>
+
+
+      <!-- Checkout Root -->
+
+      <div id="checkout-root">
+
+        <div class="checkout-loading">
+
+          <div class="spinner"></div>
+
+          <p>
+            Preparing your checkout...
+          </p>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </main>
+
+
+  <!-- ==============================
+       FOOTER
+  =============================== -->
 
   <div id="footer-root"></div>
 
+
+  <!-- ==============================
+       JAVASCRIPT
+  =============================== -->
+
   <script src="/js/main.js"></script>
+
   <script src="/js/checkout.js"></script>
+
 </body>
 </html>

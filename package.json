@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node server/server.js",
     "dev": "nodemon server/server.js",
-    "seed": "node -r dotenv/config server/utils/seed.js"
+    "seed": "node -r dotenv/config server/utils/seed.js",
+    "import:products": "node server/utils/importProducts.js"
   },
   "keywords": ["ecommerce", "nodejs", "express", "mongodb"],
   "author": "",

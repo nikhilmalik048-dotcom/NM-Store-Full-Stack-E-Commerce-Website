@@ -3,59 +3,333 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NM Store - Shop Everything You Need</title>
+
+  <title>NM Store - Smart Shopping</title>
+  <meta
+    name="description"
+    content="NM Store - Shop electronics, fashion, home essentials, sports products and more."
+  />
+
   <link rel="stylesheet" href="/css/style.css" />
 </head>
+
 <body>
+
+  <!-- ================= NAVBAR ================= -->
   <div id="navbar-root"></div>
 
+
+  <!-- ================= HERO ================= -->
   <section class="hero">
-    <h1>Everything You Need, All in One Place</h1>
-    <p>Shop the latest electronics, fashion, home essentials and more — at prices you'll love.</p>
-    <a href="/products" class="btn btn-secondary">Shop Now</a>
+    <div class="hero-content">
+
+      <div
+        style="
+          display:inline-flex;
+          align-items:center;
+          gap:8px;
+          padding:7px 14px;
+          margin-bottom:16px;
+          border-radius:999px;
+          background:rgba(255,255,255,.12);
+          border:1px solid rgba(255,255,255,.25);
+          backdrop-filter:blur(10px);
+          font-size:13px;
+          font-weight:700;
+          letter-spacing:.3px;
+        "
+      >
+        ✦ NM STORE • SMART SHOPPING
+      </div>
+
+      <h1>Shop smarter.<br />Live better.</h1>
+
+      <p>
+        Discover trending products, everyday essentials and amazing deals —
+        all in one place.
+      </p>
+
+      <div
+        style="
+          display:flex;
+          justify-content:center;
+          gap:12px;
+          flex-wrap:wrap;
+        "
+      >
+        <a href="/products" class="btn btn-secondary">
+          Explore Products →
+        </a>
+
+        <a
+          href="/products?sort=popular"
+          class="btn"
+          style="
+            background:rgba(255,255,255,.12);
+            color:white;
+            border:1px solid rgba(255,255,255,.3);
+            backdrop-filter:blur(10px);
+          "
+        >
+          🔥 Trending Now
+        </a>
+      </div>
+
+    </div>
   </section>
 
+
+  <!-- ================= FEATURED PRODUCTS ================= -->
   <section class="section container">
+
     <div class="section-title">
-      <h2>Featured Products</h2>
-      <a href="/products?featured=true">View all →</a>
+      <div>
+        <div
+          style="
+            color:var(--secondary);
+            font-size:12px;
+            font-weight:800;
+            text-transform:uppercase;
+            letter-spacing:1px;
+            margin-bottom:5px;
+          "
+        >
+          Handpicked for you
+        </div>
+
+        <h2>⭐ Featured Products</h2>
+      </div>
+
+      <a href="/products?featured=true">
+        View all →
+      </a>
     </div>
+
     <div id="featured-products" class="product-grid">
       <div class="spinner"></div>
     </div>
+
   </section>
 
-  <section class="section container" style="background:white; border-radius:var(--radius);">
+
+  <!-- ================= LATEST PRODUCTS ================= -->
+  <section
+    class="section container"
+    style="
+      background:
+        linear-gradient(
+          135deg,
+          rgba(239,246,255,.9),
+          rgba(255,255,255,.95)
+        );
+      border-radius:22px;
+      border:1px solid #e2e8f0;
+      box-shadow:var(--shadow);
+    "
+  >
+
     <div class="section-title">
-      <h2>Latest Products</h2>
-      <a href="/products?sort=newest">View all →</a>
+
+      <div>
+        <div
+          style="
+            color:var(--primary);
+            font-size:12px;
+            font-weight:800;
+            text-transform:uppercase;
+            letter-spacing:1px;
+            margin-bottom:5px;
+          "
+        >
+          Just arrived
+        </div>
+
+        <h2>🆕 Latest Products</h2>
+      </div>
+
+      <a href="/products?sort=newest">
+        View all →
+      </a>
+
     </div>
+
     <div id="latest-products" class="product-grid">
       <div class="spinner"></div>
     </div>
+
   </section>
 
+
+  <!-- ================= POPULAR PRODUCTS ================= -->
   <section class="section container">
+
     <div class="section-title">
-      <h2>Popular Products</h2>
-      <a href="/products?sort=popular">View all →</a>
+
+      <div>
+        <div
+          style="
+            color:var(--secondary);
+            font-size:12px;
+            font-weight:800;
+            text-transform:uppercase;
+            letter-spacing:1px;
+            margin-bottom:5px;
+          "
+        >
+          Customers love these
+        </div>
+
+        <h2>🔥 Popular Products</h2>
+      </div>
+
+      <a href="/products?sort=popular">
+        View all →
+      </a>
+
     </div>
+
     <div id="popular-products" class="product-grid">
       <div class="spinner"></div>
     </div>
+
   </section>
 
+
+  <!-- ================= SHOP BY CATEGORY ================= -->
   <section class="section container">
-    <div class="section-title"><h2>Shop by Category</h2></div>
-    <div id="home-categories" class="product-grid">
+
+    <div class="section-title">
+
+      <div>
+        <div
+          style="
+            color:var(--primary);
+            font-size:12px;
+            font-weight:800;
+            text-transform:uppercase;
+            letter-spacing:1px;
+            margin-bottom:5px;
+          "
+        >
+          Find what you need
+        </div>
+
+        <h2>🛍️ Shop by Category</h2>
+      </div>
+
+    </div>
+
+    <div
+      id="home-categories"
+      class="product-grid"
+    >
       <div class="spinner"></div>
     </div>
+
   </section>
 
+
+  <!-- ================= TRUST SECTION ================= -->
+  <section class="section container">
+
+    <div
+      class="card"
+      style="
+        padding:28px;
+        background:
+          linear-gradient(
+            135deg,
+            #0f172a,
+            #172554
+          );
+        color:white;
+        overflow:hidden;
+        position:relative;
+      "
+    >
+
+      <div
+        style="
+          position:absolute;
+          width:220px;
+          height:220px;
+          border-radius:50%;
+          background:rgba(37,99,235,.18);
+          right:-80px;
+          top:-100px;
+        "
+      ></div>
+
+      <div
+        style="
+          position:absolute;
+          width:160px;
+          height:160px;
+          border-radius:50%;
+          background:rgba(249,115,22,.14);
+          left:-70px;
+          bottom:-100px;
+        "
+      ></div>
+
+      <div
+        style="
+          position:relative;
+          z-index:2;
+          display:grid;
+          grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+          gap:22px;
+          text-align:center;
+        "
+      >
+
+        <div>
+          <div style="font-size:30px;margin-bottom:6px;">🚚</div>
+          <strong>Fast Delivery</strong>
+          <p style="font-size:13px;opacity:.7;margin-top:4px;">
+            Get your products delivered quickly.
+          </p>
+        </div>
+
+        <div>
+          <div style="font-size:30px;margin-bottom:6px;">🔒</div>
+          <strong>Secure Shopping</strong>
+          <p style="font-size:13px;opacity:.7;margin-top:4px;">
+            Your shopping experience stays protected.
+          </p>
+        </div>
+
+        <div>
+          <div style="font-size:30px;margin-bottom:6px;">💰</div>
+          <strong>Great Deals</strong>
+          <p style="font-size:13px;opacity:.7;margin-top:4px;">
+            Discover products at attractive prices.
+          </p>
+        </div>
+
+        <div>
+          <div style="font-size:30px;margin-bottom:6px;">⭐</div>
+          <strong>Quality Products</strong>
+          <p style="font-size:13px;opacity:.7;margin-top:4px;">
+            Explore products for every need.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= FOOTER ================= -->
   <div id="footer-root"></div>
 
+
+  <!-- ================= JAVASCRIPT ================= -->
   <script src="/js/main.js"></script>
   <script src="/js/product-card.js"></script>
   <script src="/js/home.js"></script>
+
 </body>
 </html>

@@ -1,35 +1,347 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Admin Panel - NM Store</title>
-  <link rel="stylesheet" href="/css/style.css" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <meta
+    name="description"
+    content="NM Store Admin Panel - Manage products, orders, users, categories, brands and coupons."
+  />
+
+  <meta
+    name="theme-color"
+    content="#0f172a"
+  />
+
+  <title>Admin Dashboard | NM Store</title>
+
+  <link
+    rel="stylesheet"
+    href="/css/style.css"
+  />
+
 </head>
+
+
 <body>
+
+  <!-- ==================================================
+       NAVBAR
+  =================================================== -->
+
   <div id="navbar-root"></div>
 
+
+  <!-- ==================================================
+       ADMIN APPLICATION
+  =================================================== -->
+
   <div class="admin-layout">
-    <aside class="admin-sidebar">
-      <a href="#dashboard" data-tab="dashboard" class="admin-nav-link active">📊 Dashboard</a>
-      <a href="#products" data-tab="products" class="admin-nav-link">📦 Products</a>
-      <a href="#orders" data-tab="orders" class="admin-nav-link">🧾 Orders</a>
-      <a href="#categories" data-tab="categories" class="admin-nav-link">🗂️ Categories</a>
-      <a href="#brands" data-tab="brands" class="admin-nav-link">🏷️ Brands</a>
-      <a href="#coupons" data-tab="coupons" class="admin-nav-link">🎟️ Coupons</a>
-      <a href="#users" data-tab="users" class="admin-nav-link">👥 Users</a>
+
+
+    <!-- ==================================================
+         SIDEBAR
+    =================================================== -->
+
+    <aside
+      class="admin-sidebar"
+      aria-label="Admin navigation"
+    >
+
+
+      <!-- BRAND -->
+
+      <div class="admin-sidebar-header">
+
+        <div class="admin-panel-icon">
+          ⚡
+        </div>
+
+        <div class="admin-brand-text">
+
+          <strong>
+            NM Store
+          </strong>
+
+          <span>
+            Admin Panel
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- MANAGEMENT LABEL -->
+
+      <div class="admin-menu-label">
+        MANAGEMENT
+      </div>
+
+
+      <!-- NAVIGATION -->
+
+      <nav class="admin-navigation">
+
+
+        <!-- DASHBOARD -->
+
+        <a
+          href="#dashboard"
+          data-tab="dashboard"
+          class="admin-nav-link active"
+          aria-current="page"
+        >
+
+          <span
+            class="admin-nav-icon"
+            aria-hidden="true"
+          >
+            📊
+          </span>
+
+          <span>
+            Dashboard
+          </span>
+
+        </a>
+
+
+        <!-- PRODUCTS -->
+
+        <a
+          href="#products"
+          data-tab="products"
+          class="admin-nav-link"
+        >
+
+          <span
+            class="admin-nav-icon"
+            aria-hidden="true"
+          >
+            📦
+          </span>
+
+          <span>
+            Products
+          </span>
+
+        </a>
+
+
+        <!-- ORDERS -->
+
+        <a
+          href="#orders"
+          data-tab="orders"
+          class="admin-nav-link"
+        >
+
+          <span
+            class="admin-nav-icon"
+            aria-hidden="true"
+          >
+            🧾
+          </span>
+
+          <span>
+            Orders
+          </span>
+
+        </a>
+
+
+        <!-- CATEGORIES -->
+
+        <a
+          href="#categories"
+          data-tab="categories"
+          class="admin-nav-link"
+        >
+
+          <span
+            class="admin-nav-icon"
+            aria-hidden="true"
+          >
+            🗂️
+          </span>
+
+          <span>
+            Categories
+          </span>
+
+        </a>
+
+
+        <!-- BRANDS -->
+
+        <a
+          href="#brands"
+          data-tab="brands"
+          class="admin-nav-link"
+        >
+
+          <span
+            class="admin-nav-icon"
+            aria-hidden="true"
+          >
+            🏷️
+          </span>
+
+          <span>
+            Brands
+          </span>
+
+        </a>
+
+
+        <!-- COUPONS -->
+
+        <a
+          href="#coupons"
+          data-tab="coupons"
+          class="admin-nav-link"
+        >
+
+          <span
+            class="admin-nav-icon"
+            aria-hidden="true"
+          >
+            🎟️
+          </span>
+
+          <span>
+            Coupons
+          </span>
+
+        </a>
+
+
+        <!-- USERS -->
+
+        <a
+          href="#users"
+          data-tab="users"
+          class="admin-nav-link"
+        >
+
+          <span
+            class="admin-nav-icon"
+            aria-hidden="true"
+          >
+            👥
+          </span>
+
+          <span>
+            Users
+          </span>
+
+        </a>
+
+      </nav>
+
+
+      <!-- ==================================================
+           SIDEBAR FOOTER
+      =================================================== -->
+
+      <div class="admin-sidebar-footer">
+
+        <div class="admin-secure-badge">
+
+          <span
+            aria-hidden="true"
+          >
+            🔒
+          </span>
+
+          <div>
+
+            <strong>
+              Admin Access
+            </strong>
+
+            <small>
+              Secure management
+            </small>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
     </aside>
-    <main class="admin-content" id="admin-content">
-      <div class="spinner"></div>
+
+
+    <!-- ==================================================
+         MAIN CONTENT
+    =================================================== -->
+
+    <main
+      class="admin-content"
+      id="admin-content"
+      aria-live="polite"
+    >
+
+
+      <!-- INITIAL LOADING -->
+
+      <div class="admin-loading">
+
+        <div
+          class="spinner"
+          aria-hidden="true"
+        ></div>
+
+        <p>
+          Loading admin dashboard...
+        </p>
+
+      </div>
+
+
     </main>
+
+
   </div>
 
+
+  <!-- ==================================================
+       JAVASCRIPT
+  =================================================== -->
+
+  <!-- Core application -->
+
   <script src="/js/main.js"></script>
+
+
+  <!-- Admin modules -->
+
   <script src="/js/admin-products.js"></script>
+
   <script src="/js/admin-orders.js"></script>
+
   <script src="/js/admin-catalog.js"></script>
+
   <script src="/js/admin-coupons.js"></script>
+
   <script src="/js/admin-users.js"></script>
+
+
+  <!-- Admin controller MUST load last -->
+
   <script src="/js/admin.js"></script>
+
+
 </body>
+
 </html>
