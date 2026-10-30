@@ -94,25 +94,7 @@ cp .env.example .env
 
 Open the new `.env` file and update these values:
 
-```env
-PORT=5000
-NODE_ENV=development
 
-# If using local MongoDB:
-MONGO_URI=mongodb://127.0.0.1:27017/ecommerce_store
-
-# If using MongoDB Atlas, replace with your connection string, e.g.:
-# MONGO_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/ecommerce_store
-
-JWT_SECRET=change_this_to_a_long_random_secret_key
-JWT_EXPIRE=7d
-
-CLIENT_URL=http://localhost:5000
-
-ADMIN_NAME=Admin User
-ADMIN_EMAIL=admin@example.com
-ADMIN_PASSWORD=Admin@123
-```
 
 > ⚠️ **Important**: Change `JWT_SECRET` to a long, random string before deploying anywhere public.
 
